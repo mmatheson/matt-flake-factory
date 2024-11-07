@@ -46,13 +46,8 @@ jobs:
       - name: choose next
         id: choose-next
         run: |
-          if [[ "${{ steps.switch.outputs.season }}" == "Duck" ]]; then
-            echo "secret_name=ELI_PAT" >> $GITHUB_OUTPUT
-            echo "title=Duck 🦆" >> $GITHUB_OUTPUT
-          else
-            echo "secret_name=JOSH_PAT" >> $GITHUB_OUTPUT
-            echo "title=Rabbit 🐇" >> $GITHUB_OUTPUT
-          fi
+          echo "secret_name=MATT_PAT" >> $GITHUB_OUTPUT
+          echo "title=Duck 🦆" >> $GITHUB_OUTPUT
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v6
