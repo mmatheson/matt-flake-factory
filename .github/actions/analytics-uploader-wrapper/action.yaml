@@ -5,6 +5,15 @@ inputs:
   token-staging:
     description: Organization token for staging.
     required: true
+  token-prod:
+    description: Organization token for prod.
+    required: true
+  token-dev:
+    description: Organization token for dev.
+    required: true
+  token-dev2:
+    description: Organization token for dev2.
+    required: true
   junit-paths:
     description: Comma-separated list of glob paths to junit files.
     required: true
