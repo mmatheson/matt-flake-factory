@@ -11,29 +11,25 @@ inputs:
     description: Organization token for dev.
   token-dev2:
     description: Organization token for dev2.
+  cli-version:
+    description: stuff
   junit-paths:
     description: Comma-separated list of glob paths to junit files.
     required: true
   run:
     description: The command to run before uploading test results.
     required: false
-  cli-version:
-    description: The version of the uploader to use.
-    required: false
 
 runs:
   using: composite
   steps:
-    - name: Upload test results with CLI version ${{ inputs.cli-version }} to staging
-      if: "${{ inputs.cli-version != '' }}"
+    - name: Upload test results
       continue-on-error: true
       uses: trunk-io/analytics-uploader@main
       with:
         org-slug: notests4
         token: ${{ inputs.token-staging }}
-        cli-version: ${{ inputs.cli-version }}
         junit-paths: ${{ inputs.junit-paths }}
         run: ${{ inputs.run }}
-        quarantine: true
       env:
         TRUNK_PUBLIC_API_ADDRESS: https://api.trunk-staging.io
