@@ -44,7 +44,7 @@ runs:
       continue-on-error: true
       uses: trunk-io/analytics-uploader@main
       with:
-        org-slug: trunk-staging-org
+        org-slug: notests4
         token: ${{ inputs.token-staging }}
         cli-version: ${{ inputs.cli-version }}
         junit-paths: ${{ inputs.junit-paths }}
