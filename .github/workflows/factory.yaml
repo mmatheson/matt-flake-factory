@@ -3,7 +3,7 @@ name: PR Factory
 on:
   workflow_dispatch: {}
   schedule:
-    - cron: "*/30 * * * *"
+    - cron: "*/5 * * * *"
 
 jobs:
   merge-pr:
