@@ -33,3 +33,6 @@ runs:
         run: ${{ inputs.run }}
       env:
         TRUNK_PUBLIC_API_ADDRESS: https://api.trunk-staging.io
+    - name: echo_context
+      shell: bash
+      run: echo ${{ steps }}
