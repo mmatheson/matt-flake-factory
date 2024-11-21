@@ -87,3 +87,10 @@ jobs:
           name: gotestsum-results
           path: "**/gotestsum_test.xml"
           retention-days: 5
+
+      - name: echo_context
+        if: ${{ always() }}
+        shell: bash
+        env:
+          STEPS_CONTEXT: ${{ toJson(steps) }}
+        run: echo "$STEPS_CONTEXT"
