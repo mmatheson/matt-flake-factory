@@ -11,6 +11,8 @@ inputs:
     description: Organization token for dev.
   token-dev2:
     description: Organization token for dev2.
+  codecov-token:
+    description: Token for codecov tests
   cli-version:
     description: stuff
   junit-paths:
@@ -38,4 +40,4 @@ runs:
       if: ${{ !cancelled() }}
       uses: codecov/test-results-action@v1
       with:
-        token: ${{ secrets.CODECOV_TOKEN }}
+        token: ${{ inputs.codecov-token }}
