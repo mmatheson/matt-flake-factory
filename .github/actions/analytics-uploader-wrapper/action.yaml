@@ -33,6 +33,9 @@ runs:
         run: ${{ inputs.run }}
       env:
         TRUNK_PUBLIC_API_ADDRESS: https://api.trunk-staging.io
-    - name: echo_context
-      shell: bash
-      run: echo ${{ toJson(steps) }}
+
+    - name: Upload test results to Codecov
+      if: ${{ !cancelled() }}
+      uses: codecov/test-results-action@v1
+        with:
+        token: ${{ secrets.CODECOV_TOKEN }}
