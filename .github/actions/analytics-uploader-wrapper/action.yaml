@@ -9,8 +9,6 @@ inputs:
     description: Organization token for prod.
   token-dev:
     description: Organization token for dev.
-  token-dev2:
-    description: Organization token for dev2.
   codecov-token:
     description: Token for codecov tests
   cli-version:
