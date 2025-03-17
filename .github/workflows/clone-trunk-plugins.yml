@@ -17,10 +17,9 @@ jobs:
         uses: actions/checkout@v3
         with:
           repository: trunk-io/plugins
-          path: trunk-plugins
 
       - name: List cloned repository contents
-        run: ls -la trunk-plugins
+        run: ls -la ./.github/actions
 
       - name: Linter Tests
         # Run tests using KnownGoodVersion with any modified linters and conditionally all linters
