@@ -1,0 +1,19 @@
+name: Clone Trunk Plugins
+
+on:
+  workflow_dispatch: {} # Allows manual triggering of the workflow
+  schedule:
+    - cron: 0 0 * * 0 # Run weekly on Sundays at midnight UTC
+
+jobs:
+  clone-trunk-plugins:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout trunk-io/plugins repository
+        uses: actions/checkout@v3
+        with:
+          repository: trunk-io/plugins
+          path: trunk-plugins
+
+      - name: List cloned repository contents
+        run: ls -la trunk-plugins
