@@ -21,3 +21,7 @@ jobs:
 
       - name: List cloned repository contents
         run: ls -la trunk-plugins
+
+      - name: Linter Tests
+        # Run tests using KnownGoodVersion with any modified linters and conditionally all linters
+        uses: ./.github/actions/linter_tests
